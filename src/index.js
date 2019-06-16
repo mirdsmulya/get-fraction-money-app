@@ -45,9 +45,7 @@ class App extends React.Component {
 						type="text"
 						placeholder=" Rp xxx"
 						onChange={this.updateInput}
-						value={this.state.rupiahNumber}
-
-					/>
+						value={this.state.rupiahNumber}/>
 				</form>
 				<button
 					className="btn center-btn"
@@ -67,20 +65,3 @@ render(
 		<App />,
 	document.getElementById('app')
 );
-
-//{this.props.children}
-//import configureStore from './stores/configureStore';
-//import { Provider } from 'react-redux';
-//import { Router, browserHistory } from 'react-router';
-//import routes from './routes';
-//import {loadDatas} from './actions/dataAction';
-//import {loadAntrian} from './actions/antrianAction';
-//import {loadStats} from './actions/statsAction';
-/**
-
-const store = configureStore();
-store.dispatch(loadDatas());
-store.dispatch(loadAntrian());
-store.dispatch(loadStats());
-
-**/
