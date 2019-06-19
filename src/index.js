@@ -1,4 +1,3 @@
-//import 'babel-polyfill';
 import React, {propTypes} from 'react';
 import { render } from 'react-dom';
 import './styles/styles.css';
@@ -13,11 +12,20 @@ class App extends React.Component {
 	constructor(props, context) {
 		super(props,context);
 		this.state = {
-			rupiahNumber: " ",
+			rupiahNumber: "",
 			result: []
 		};
 		this.onCalculate = this.onCalculate.bind(this);
 		this.updateInput = this.updateInput.bind(this);
+		this.enterPressed = this.enterPressed.bind(this);
+	}
+
+	enterPressed(event) {
+		const code = event.keyCode || event.which;
+		if (code === 13) { // work when hit enter
+			event.preventDefault();
+			this.onCalculate();
+		}
 	}
 
 	onCalculate(event) {
@@ -47,12 +55,18 @@ class App extends React.Component {
 					<p>Input number of Rupiah:</p>
 					<input
 						type="text"
-						placeholder=" Rp xxx"
+						placeholder="Rp xxx"
 						onChange={this.updateInput}
-						value={this.state.rupiahNumber}/>
+						value={this.state.rupiahNumber}
+						onKeyPress={this.enterPressed}
+
+				/>
+
 				</form>
-				<button className="btn center-btn" onClick={this.onCalculate}>
-					Calculate
+				<button
+					className="btn center-btn"
+					onClick={this.onCalculate}
+					onKeyPress={this.enterPressed}>Calculate
 				</button>
 				<p className="center-text">
 					Result:
