@@ -25,7 +25,7 @@ class App extends React.Component {
 		if (code === 13) { // work when hit enter
 			event.preventDefault();
 			this.onCalculate();
-		}
+		}	
 	}
 
 	onCalculate(event) {
