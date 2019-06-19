@@ -25,7 +25,7 @@ class App extends React.Component {
 		if (code === 13) { // work when hit enter
 			event.preventDefault();
 			this.onCalculate();
-		}	
+		}
 	}
 
 	onCalculate(event) {
@@ -34,11 +34,9 @@ class App extends React.Component {
 		let rupiahValid = RupiahValidation.validateInput(data);
 		let result = RupiahFraction.fractionRupiah(rupiahValid);
 		this.setState({result: result});
-
 	}
 
 	updateInput(event) {
-
     let data = Object.assign({}, this.state.data);
     data = event.target.value;
     this.setState({rupiahNumber: data});
@@ -59,8 +57,7 @@ class App extends React.Component {
 						onChange={this.updateInput}
 						value={this.state.rupiahNumber}
 						onKeyPress={this.enterPressed}
-
-				/>
+					/>
 
 				</form>
 				<button
