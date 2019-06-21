@@ -46,19 +46,20 @@ class RupiahValidation {
   }
 
   static cleanDotString(splittedInput) {
-    let a = 0, b = 0, c = 0;
+    let a = 1, b = 2, c = 3;
     for (let i = 0; i < 5; i++ ) {
       let indexOfDot = splittedInput.indexOf('.');
       // define dot ('.') position
-      if (indexOfDot == 1 + a || indexOfDot == 2 + b|| indexOfDot == 3 + c ) {
+      if (indexOfDot == a || indexOfDot == b|| indexOfDot == c ) {
         splittedInput.splice(indexOfDot, 1 );
-        if (i == 0) {a = 3; b = 3; c = 3;} // variable for input 100.000 / 100.000.000 / 100.000 /
-        if (i == 1) {a = 7; b = 5; c = 6;} // 100.000.000
-        if (i == 2) {a = 0; b = 6; c = 6;} // 100.000.000.000
+        if (i == 0) {a = 4; b = 5; c = 6;} // variable for input 100.000 / 100.000.000 / 100.000 /
+        if (i == 1) {a = 7; b = 8; c = 9;} // 100.000.000
+        if (i == 2) {a = 10; b = 11; c = 12;} // 100.000.000.000
+        if (i == 3) {a = 13; b = 14; c = 15;}
       }
       else if (indexOfDot == -1 ) { i = 5; }
       else {
-        splittedInput.push(",");
+        splittedInput.push("error");
         i = 5;
       }
     }
@@ -69,7 +70,7 @@ class RupiahValidation {
     let indexOfSpaceString = splittedInput.indexOf(' ');
     let inputLength = splittedInput.length;
     if (indexOfSpaceString > 0) {
-      splittedInput.push(',');
+      splittedInput.push('error');
     }
     return splittedInput;
   }
