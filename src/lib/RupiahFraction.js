@@ -5,15 +5,15 @@ class RupiahFraction {
   static fractionRupiah(inputIntegerNumber) {
     let temp = [];
 		const rupiahFractions= [100000, 50000, 20000, 10000, 5000, 2000, 1000, 500, 100, 50, 50];
-    if (!inputIntegerNumber) {
-      temp.push({rupiah: "Invalid input!", count: ""});
-    }
-    else if (inputIntegerNumber >= 1000000000000000) { //max number of input
+    if (inputIntegerNumber >= 1000000000000000) { //max input
       temp.push({rupiah: "", count:"Exceed the possible input of number!"});
     }
-    else {
+    else if (inputIntegerNumber > 0) {
       let fractionResult = this.operateFraction(inputIntegerNumber, rupiahFractions);
       temp = fractionResult;
+    }
+    else {
+      temp.push({rupiah: "Invalid input!", count: ""});
     }
 		return temp;
 	}
