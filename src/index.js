@@ -29,7 +29,6 @@ class App extends React.Component {
 	}
 
 	onCalculate(event) {
-		debugger;
 		let data = Object.assign(this.state.rupiahNumber);
 		let rupiahValid = RupiahValidation.validateInput(data);
 		let result = RupiahFraction.fractionRupiah(rupiahValid);
@@ -37,14 +36,11 @@ class App extends React.Component {
 	}
 
 	updateInput(event) {
-    let data = Object.assign({}, this.state.data);
-    data = event.target.value;
+    let data = event.target.value;
     this.setState({rupiahNumber: data});
 	}
 
 	render() {
-		debugger;
-		let data = this.state.result;
 		return(
 
 			<div className="title center-text">
@@ -65,9 +61,7 @@ class App extends React.Component {
 					onClick={this.onCalculate}
 					onKeyPress={this.enterPressed}>Calculate
 				</button>
-				<p className="center-text">
-					Result:
-				</p>
+				<p className="center-text">Result:</p>
 				{this.state.result.map(data => <FractionResult data={data} />)}
 			</div>
 
