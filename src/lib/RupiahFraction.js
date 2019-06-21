@@ -9,6 +9,9 @@ class RupiahFraction {
     if (inputNumber == false) {
       temp.push({rupiah: "input!", count: "Invalid "});
     }
+    else if (inputNumber >= 10000000000000000) { //max number of input
+      temp.push({rupiah: "Exceed the possible input of number!", count:""})
+    }
     else {
       let fractionResult = this.operateFraction(inputNumber, rupiahFractions);
       temp = fractionResult;
@@ -27,7 +30,7 @@ class RupiahFraction {
 				let divideResult = this.divideInt(inputTemp, rupiahFraction);
 				let multiplicationResult = this.multipleInt(rupiahFraction, divideResult);
 				let subtractResult = this.substractInt(inputTemp, multiplicationResult);
-				temp.push({rupiah: "Rp " + rupiahFraction, count: divideResult + " x"});
+				temp.push({rupiah: "Rp" + rupiahFraction, count: divideResult + " x "});
 				inputTemp = subtractResult;
 			}
 			// case: 5000 mod 10000 = 5000
@@ -39,7 +42,7 @@ class RupiahFraction {
 			}
 			else { // case: 10.000 mod 5.000 = 0
 				let fractionCount = inputTemp / rupiahFraction;
-				temp.push({rupiah: "Rp " + rupiahFraction, count: fractionCount + " x"});
+				temp.push({rupiah: "Rp" + rupiahFraction, count: fractionCount + " x "});
 				i = rupiahFractions.length;
 			}
 		}
