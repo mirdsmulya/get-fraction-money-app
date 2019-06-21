@@ -14,10 +14,12 @@ class RupiahValidation {
   }
 
   static detectRpChar(string, detect1, detect2) {
-    let string1 = string[0].toLowerCase();
-    let string2 = string[1].toLowerCase();
-    if (string1 == detect1 && string2 == detect2) {
-      return true;
+    if (string.length > 1) {
+      let string1 = string[0].toLowerCase();
+      let string2 = string[1].toLowerCase();
+      if (string1 == detect1 && string2 == detect2) {
+        return true;
+      }
     }
     return false;
   }
@@ -30,26 +32,26 @@ class RupiahValidation {
   }
 
   static cleanZeroOnFront(splittedInput) {
-    let input = splittedInput;
-    for (let i = 0; i < splittedInput.length; i++) {
-      if (input[0] == "0") {
-        input.shift();
+    let lengthInput = splittedInput.length;
+    for (let i = 0; i < lengthInput; i++) {
+      if (splittedInput[0] == "0") {
+        splittedInput.shift();
       }
-      else {i = splittedInput.length; } //end loop
+      else {i = lengthInput; } //end loop
     }
-    return input;
+    return splittedInput;
   }
 
   static cleanDotString(splittedInput) {
-    let a = 1, b = 2, c = 3; // for input 1.000
+    let a = 1, b = 2, c = 3; // for input 1.000 - 999.999
     for (let i = 0; i < 5; i++ ) {
       let indexOfDot = splittedInput.indexOf('.');
       if (indexOfDot == a || indexOfDot == b|| indexOfDot == c ) {
         splittedInput.splice(indexOfDot, 1 );
-        if (i == 0) {a = 4 ; b = 5 ; c =  6;} // for input 1.000.000
-        if (i == 1) {a = 7 ; b = 8 ; c =  9;} // for input 1.000.000.000
-        if (i == 2) {a = 10; b = 11; c = 12;} // for input 1.000.000.000.000
-        if (i == 3) {a = 13; b = 14; c = 15;} // for input 1.000.000.000.000.000
+        if (i == 0) {a = 4 ; b = 5 ; c =  6;} // for input 1.000.000 - 999.999.999
+        if (i == 1) {a = 7 ; b = 8 ; c =  9;} // for input 1.000.000.000 - 999G
+        if (i == 2) {a = 10; b = 11; c = 12;} // for input 1.000.000.000.000 - 999T
+        if (i == 3) {a = 13; b = 14; c = 15;} // for input 1.000.000.000.000.000 - etc
       }
       else if (indexOfDot == -1 ) { i = 5 ; } // i = 5 -> end loop
       else { splittedInput.push("error"); i = 5;}
