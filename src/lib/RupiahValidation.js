@@ -67,6 +67,7 @@ class RupiahValidation {
 
   static detectSpaceString(splittedInput) {
     let indexOfSpaceString = splittedInput.indexOf(' ');
+    let inputLength = splittedInput.length;
     if (indexOfSpaceString > 0) {
       splittedInput.push(',');
     }
@@ -76,7 +77,7 @@ class RupiahValidation {
   static cleanComaString(splittedInput) {
     let list = splittedInput;
     let indexOfComa = list.indexOf(',');
-    if (indexOfComa == list.length - 3) {
+    if (indexOfComa == list.length - 3 && list.length != 2) {
       this.popLoop(list,3);
     }
     else if (indexOfComa == -1 ) {
@@ -86,10 +87,10 @@ class RupiahValidation {
     return list;
   }
 
-  static parseStringToInteger(withoutDotRpComa) {
+  static parseStringToInteger(inputList) {
     let result = 0;
-    if (withoutDotRpComa != undefined) {
-      let joinChar = withoutDotRpComa.join("");
+    if (inputList != undefined) {
+      let joinChar = inputList.join("");
       let to_Integer = parseInt(joinChar);
       if (to_Integer.toString() != joinChar) {
         result = false;
