@@ -1,19 +1,16 @@
 
-
 /*Styles*/
 
-title {
-  color: Green;
-  text-align: center;
-  text-decoration-color: red;
-  font-size: 200;
-}
 
 h1 {
   color: Green;
   text-align: center;
-  padding-top: 10%;
+  padding-top: 3%;
 
+}
+
+input {
+  text-align: center;
 }
 
 form {
@@ -21,6 +18,10 @@ form {
   text-align: center;
   padding-top: 1%;
   padding-bottom: 1%;
+}
+
+p {
+  font-size: 15px;
 }
 
 .center-btn {
@@ -32,6 +33,6 @@ form {
 
 .center-text {
   text-align: center;
-  padding-top: 1%;
+  padding-top: 1px;
   padding-bottom: 1%;
 }
