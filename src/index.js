@@ -42,11 +42,13 @@ class App extends React.Component {
 
 	render() {
 		return(
-
 			<div className="title center-text">
+			<div className="jumbotron">
+				<div className="container">
+
 				<h1>Hello!</h1>
 				<form>
-					<p>Input number of Rupiah:</p>
+					<p>Rupiah Denomination App</p>
 					<input
 						type="text"
 						placeholder="Rp xxx"
@@ -61,9 +63,12 @@ class App extends React.Component {
 					onClick={this.onCalculate}
 					onKeyPress={this.enterPressed}>Calculate
 				</button>
-				<p className="center-text">Result:</p>
-				{this.state.result.map(data => <FractionResult data={data} />)}
 			</div>
+		</div>
+				<p className="center-text">Result:</p>
+				{this.state.result.map(data => <FractionResult  data={data} />)}
+			</div>
+
 
 			);
 	}
