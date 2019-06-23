@@ -7,7 +7,8 @@ This app mainly build using JS, CSS and HTMl and also with reactjs as framework,
 TODO:
 
 Instalation:
-$ npm install
+$npm install
 
-Run:
-$ npm start -s
+Run local:
+$npm start -s
+$localhost/3000
