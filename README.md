@@ -11,4 +11,5 @@ Instalation:
 
 Run local:
 > npm start -s
-> localhost/3000
+
+access on: localhost/3000
