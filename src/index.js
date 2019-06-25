@@ -66,7 +66,7 @@ class App extends React.Component {
 			</div>
 		</div>
 				<p className="center-text">Result:</p>
-				{this.state.result.map(data => <FractionResult  data={data} />)}
+				{this.state.result.map(data => <FractionResult  data={data} key={data.rupiah} />)}
 			</div>
 
 
