@@ -2,7 +2,7 @@
 
 # Fraction-Rupiah-Money Application
 
-This app mainly build using JS, CSS and HTMl and also with reactjs as framework, webpack as build tools, and npm as package manager.
+This app mainly build using JS, CSS and HTML and also with reactjs as framework, webpack as build tools, and npm as package manager.
 
 TODO:
 
@@ -12,4 +12,4 @@ Instalation:
 Run local:
 > npm start -s
 
-access on: localhost/3000
+access on: localhost/8081
