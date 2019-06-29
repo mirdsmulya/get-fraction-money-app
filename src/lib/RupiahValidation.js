@@ -10,9 +10,7 @@ class RupiahValidation {
   }
 
   static detectChar(string, detect1, detect2) {
-    if (string[0].toLowerCase() == detect1 && string[1].toLowerCase() == detect2) {
-      return true;
-    }
+    if (string[0].toLowerCase() == detect1 && string[1].toLowerCase() == detect2) { return true; }
     else {return false; }
   }
 
