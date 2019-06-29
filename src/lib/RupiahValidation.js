@@ -3,12 +3,10 @@
 class RupiahValidation {
 
   static cleanRpString(splittedInput) {
-    let detectRpString = this.detectChar(splittedInput, "r", "p");
-    if (detectRpString) {
-      splittedInput.splice(0,2);
-      if (splittedInput[0] == " ") { splittedInput.shift(); }
-    }
-    return splittedInput;
+    const detectRpString = this.detectChar(splittedInput, "r", "p");
+    debugger;
+    const withoutRpString = detectRpString ? splittedInput.splice(2,splittedInput.length) : splittedInput;
+    return withoutRpString;
   }
 
   static detectChar(string, detect1, detect2) {
@@ -19,11 +17,13 @@ class RupiahValidation {
   }
 
   static detectMissingValue(splittedInput) {
+    debugger;
     if (splittedInput.length == 0) { return false; }
     return splittedInput;
   }
 
   static cleanZeroOnFront(splittedInput) {
+    debugger;
     if (splittedInput) {
       const lengthInput = splittedInput.length;
       for (let i = 0; i < lengthInput; i++) {
@@ -35,14 +35,20 @@ class RupiahValidation {
   }
 
   static detectSpaceString(splittedInput) {
+    debugger;
     if (splittedInput) {
       let indexOfSpaceString = splittedInput.indexOf(' ');
-      if (indexOfSpaceString > 0) { return false; }
+      if (indexOfSpaceString > 0) {
+        return false;
+      } else if (indexOfSpaceString == 0) {
+        splittedInput.shift();
+      }
       return splittedInput;
     }
   }
 
   static cleanComaString(splittedInput) {
+    debugger;
     let list = splittedInput;
     if (splittedInput) {
       let indexOfComa = list.indexOf(',');
