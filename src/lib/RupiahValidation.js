@@ -139,18 +139,14 @@ class RupiahValidation {
   }
 
   static parseStringToInteger(inputList) {
-    let result;
+    let parseResult;
     if (inputList) {
       let joinedChar = inputList.join("");
       let integerResult = parseInt(joinedChar);
       let stringResult = integerResult.toString();
-      if (stringResult != joinedChar) {
-        result = false;
-      }
-      else { result = integerResult; }
+      return parseResult = stringResult != joinedChar ? false : integerResult;
     }
-    else { result = false; }
-    return result;
+    return inputList;
   }
 
   static validateInput(input) {
