@@ -18,8 +18,8 @@ class RupiahValidation {
 
   static detectMissingValue(splittedInput) {
     debugger;
-    if (splittedInput.length == 0) { return false; }
-    return splittedInput;
+    const missingValueCheckResult = splittedInput.length == 0 ? false : splittedInput;
+    return missingValueCheckResult;
   }
 
   static cleanZeroOnFront(splittedInput) {
