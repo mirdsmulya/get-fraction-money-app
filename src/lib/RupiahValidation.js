@@ -4,7 +4,6 @@ class RupiahValidation {
 
   static cleanRpString(splittedInput) {
     const detectRpString = this.detectChar(splittedInput, "r", "p");
-    debugger;
     const withoutRpString = detectRpString ? splittedInput.splice(2,splittedInput.length) : splittedInput;
     return withoutRpString;
   }
@@ -15,13 +14,11 @@ class RupiahValidation {
   }
 
   static detectMissingValue(splittedInput) {
-    debugger;
     const missingValueCheckResult = splittedInput.length == 0 ? false : splittedInput;
     return missingValueCheckResult;
   }
 
   static cleanZeroOnFront(splittedInput) {
-    debugger;
     if (splittedInput) {
       const lengthInput = splittedInput.length;
       for (let i = 0; i < lengthInput; i++) {
@@ -33,7 +30,6 @@ class RupiahValidation {
   }
 
   static detectSpaceString(splittedInput) {
-    debugger;
     if (splittedInput) {
       let indexOfSpaceString = splittedInput.indexOf(' ');
       if (indexOfSpaceString > 0) {
@@ -46,7 +42,6 @@ class RupiahValidation {
   }
 
   static cleanComaString(splittedInput) {
-    debugger;
     let list = splittedInput;
     if (splittedInput) {
       let indexOfComa = list.indexOf(',');
