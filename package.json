@@ -14,7 +14,8 @@
     "prebuild": "npm-run-all --parallel clean:build open:src",
     "build": "webpack --config webpack.config.prod.js",
     "postbuild": "npm-run-all serve:build",
-    "serve:build": "http-server ./build"
+    "serve:build": "http-server ./build",
+    "test": "jest"
   },
   "dependencies": {
     "babel-polyfill": "6.8.0",
@@ -25,6 +26,9 @@
     "toastr": "^2.1.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "6.2.4",
@@ -47,6 +51,7 @@
     "express": "^4.17.1",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "^0.8.5",
+    "jest": "^24.8.0",
     "jsdom": "8.5.0",
     "nock": "8.0.0",
     "npm-run-all": "1.8.0",
