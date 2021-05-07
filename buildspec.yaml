@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm start
+      - echo "npm start normally"
+  post_build:
+    commands:
+      - echo Build completed on `date`
